@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kaspi Donations</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      font-family: sans-serif;
+    }
+
+    #donation {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #27ae60;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 16px;
+      font-size: 28px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      box-shadow: 0 0 20px rgba(0, 255, 100, 0.6);
+    }
+
+    #donation.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="donation">Kaspi донат: ₸5 000 от Айнур 🎉</div>
+
+  <script>
+    function showDonation(message) {
+      const el = document.getElementById('donation');
+      el.textContent = message;
+      el.classList.add('show');
+      setTimeout(() => {
+        el.classList.remove('show');
+      }, 5000);
+    }
+
+    // Пример демонстрации (авто-старт)
+    setTimeout(() => {
+      showDonation("Kaspi донат: ₸2 500 от Бауыржан 🙌");
+    }, 1000);
+  </script>
+</body>
+</html>
